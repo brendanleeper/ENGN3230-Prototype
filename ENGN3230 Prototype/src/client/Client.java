@@ -23,6 +23,9 @@ public class Client {
 		// sends request to server
 		// encrypts with public key
 		// sends data in chunks
+		
+		// main loop waits for data
+		// every x hours sends to server
 	}
 
 }

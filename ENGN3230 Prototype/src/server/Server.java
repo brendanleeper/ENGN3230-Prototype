@@ -28,6 +28,7 @@ public class Server {
 		sqlm.insert();
 		sqlm.query("SELECT * FROM data");
 		
+		
 		// listen on socket
 		// accept connection
 		// decrypt data

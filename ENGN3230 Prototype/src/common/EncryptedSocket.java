@@ -12,6 +12,7 @@ package common;
  * EncryptedSocket
  * 
  * Used for encrypted communication between client/mobile app and server
+ * Use Java cryptography classes to make it ezpz
  *
  */
 public class EncryptedSocket {

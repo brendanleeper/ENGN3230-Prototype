@@ -79,6 +79,8 @@ public class SQLiteManager {
 				colnames+= c + "\t";
 			}
 			
+			System.out.println(colnames);
+			
 			while(rs.next()) {
 				for(String key : columns.keySet()) {
 					if(columns.get(key).equals("text")) {
