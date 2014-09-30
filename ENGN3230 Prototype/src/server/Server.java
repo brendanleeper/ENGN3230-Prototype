@@ -23,10 +23,10 @@ public class Server {
 	public static void main(String[] args) {
 		SQLiteManager sqlm = new SQLiteManager();
 		sqlm.init();
-		sqlm.dropTables();
+		//sqlm.dropTables();
 		sqlm.makeTables();
 		sqlm.insert();
-		sqlm.query("SELECT * FROM data");
+		//sqlm.query("SELECT * FROM data");
 		
 		
 		// listen on socket

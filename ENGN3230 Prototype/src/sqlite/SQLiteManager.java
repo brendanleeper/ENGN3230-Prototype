@@ -36,7 +36,7 @@ public class SQLiteManager {
 			// initialise the sqlite driver
 			Class.forName(driver);
 			// create the connection to our db file
-			c = DriverManager.getConnection("jdbc:sqlite:engnprototype.db");
+			c = DriverManager.getConnection("jdbc:sqlite:users.db");
 		} catch (SQLException | ClassNotFoundException e) {
 			System.err.println("SQLiteManager.init() - Error initialising SQLite database");
 			e.printStackTrace();
@@ -112,6 +112,7 @@ public class SQLiteManager {
 		
 		try {
 			s = c.createStatement();
+			s.executeUpdate("INSERT INTO USERS (USERNAME,PASSWORD) VALUES ('test', 'password')");
 			String insert;
 			for(int i=1; i<12; i++) {
 				insert = "INSERT INTO DATA (ID,NAME) VALUES (" + i + ", " + "'charles'" + ")";
@@ -133,7 +134,8 @@ public class SQLiteManager {
 		Statement s = null;
 		try {
 			s = c.createStatement();
-			s.executeUpdate("CREATE TABLE data (id numeric, name text)");
+			s.executeUpdate("CREATE TABLE data (id numeric, name varchar(30))");
+			s.executeUpdate("CREATE TABLE users (username varchar(20), password varchar(20))");
 			s.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -150,6 +152,7 @@ public class SQLiteManager {
 		try {
 			s = c.createStatement();
 			s.executeUpdate("DROP TABLE data");
+			s.executeUpdate("DROP TABLE users");
 			s.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
