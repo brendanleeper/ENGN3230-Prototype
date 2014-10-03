@@ -25,7 +25,7 @@ public class Server {
 		sqlm.init();
 		//sqlm.dropTables();
 		sqlm.makeTables();
-		sqlm.insert();
+		//sqlm.insert();
 		//sqlm.query("SELECT * FROM data");
 		
 		

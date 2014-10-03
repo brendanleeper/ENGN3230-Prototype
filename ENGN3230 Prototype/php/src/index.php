@@ -11,5 +11,12 @@
 	<br />
 	<input type="submit" value="login"/>
 	</form>
+	<br>
+	<form action="register.php" method="POST">
+	<p>Username</p><input type ="text" name="user"/>
+	<p>password</p><input type="password" name="pass"/>
+	<br />
+	<input type="submit" value="register"/>
+	</form>
 </body>
 </html>
