@@ -37,8 +37,11 @@ public class SQLiteManager {
 			Class.forName(driver);
 			// create the connection to our db file
 			c = DriverManager.getConnection("jdbc:sqlite:prototype.db");
-		} catch (SQLException | ClassNotFoundException e) {
+		} catch (SQLException e) {
 			System.err.println("SQLiteManager.init() - Error initialising SQLite database");
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		assert c != null;
@@ -133,7 +136,7 @@ public class SQLiteManager {
 		Statement s = null;
 		try {
 			s = c.createStatement();
-			s.executeUpdate("CREATE TABLE data (id numeric, name varchar(30))");
+			s.executeUpdate("CREATE TABLE data (username varchar(20), data varchar(255))");
 			s.executeUpdate("CREATE TABLE users (username varchar(20), hash varchar(255))");
 			s.close();
 		} catch (SQLException e) {

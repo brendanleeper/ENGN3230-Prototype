@@ -18,5 +18,7 @@
 	<br />
 	<input type="submit" value="register"/>
 	</form>
+	<br>
+	<?php phpinfo(); ?>
 </body>
 </html>
