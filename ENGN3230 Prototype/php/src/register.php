@@ -25,7 +25,6 @@
 		$cmd .= ' "E:/Dropbox/git/ENGN3230 Prototype/keystore.jks" -dname "CN=Brendan Leeper, EMAILADDRESS=brendan.leeper@gmail.com, OU=ENGN3230 Prototype, O=ANU ENGN3230 2014, L=Canberra, S=ACT, C=AU" -storepass security -keypass security 2>&1';
 		
 		exec($cmd, $output, $return_val);
-		//exec("'C:\Program Files (x86)\Java\jre7\bin\keytool.exe' -list -keystore E:/Dropbox/git/keystore.jks 2>&1", $output, $return_val);
 		echo "return code: $return_val\n";
 		foreach($output as $line) echo "$line\n";
 		
