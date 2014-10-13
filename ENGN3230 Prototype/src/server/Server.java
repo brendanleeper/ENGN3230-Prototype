@@ -14,6 +14,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SignatureException;
 
 import common.EncryptedSocketWrapper;
 
@@ -69,14 +72,13 @@ public class Server implements Runnable {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		/*if(args.length == 1) {
-			port = Integer.parseInt(args[0]);
-		} else {
-			System.out.println("java PrototypeServer <portNumber>");
-			return;
-		}*/
-		
-		
+		String input = "a";
+		byte[] e = EncryptedSocketWrapper.encrypt(input, "testuser");
+		System.out.println("Encrypted length: " + e.length);
+		String d = EncryptedSocketWrapper.decrypt(e, "testuser");
+		System.out.println("Input was: " + input);
+		System.out.println("Encrypted form: " + e.toString());
+		System.out.println("Decrypted form: " + d);
 		
 		//SQLiteManager sqlm = new SQLiteManager();
 		//sqlm.init();
